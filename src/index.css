@@ -1,3 +1,42 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Global dark theme base without using @apply so it works in plain CSS too */
+html,
+body,
+#root {
+  background-color: #1d1d1d; /* ink */
+  color: #e2e8f0; /* slate-200 */
+  min-height: 100vh;
+}
+
+/* Subtle link styles matching the muted palette */
+a {
+  color: #4b6777; /* silver */
+  transition: color 150ms ease-in-out;
+}
+a:hover {
+  color: #ce9e62; /* gold */
+}
+:root {
+  --color-ink: #2c2c2c;
+  --color-silver: #4b6777;
+  --color-slate-200: #e2e8f0;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-rust: #c1432e;
+  --color-neutral-400: #a8a29e;
+  --color-amber-950: #78350f;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #ce9e62;
+}
+/* Dialog base to match dark theme */
+dialog {
+  background-color: #18181b; /* zinc-900 */
+  color: #e2e8f0; /* slate-200 */
+  border: 1px solid #3f3f46; /* zinc-700 */
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+}

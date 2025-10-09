@@ -21,10 +21,10 @@ fieldset {
   display: inline-block;
   margin: 0 auto;
   text-align: left;
-  padding: 0 0 0 2rem;
+  padding: 0;
   z-index: 1;
-  min-height: 25rem;
-  min-width: 35rem;
+  min-height: 30rem;
+  min-width: 30rem;
 }
 
 .form--login > fieldset > input {
@@ -40,45 +40,42 @@ fieldset {
   display: block;
   width: 94%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
+  color: #e2e8f0; /* slate-200 */
+  background-color: #27272a; /* zinc-800 - may be overridden by class */
   background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  -webkit-transition: border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  border: 1px solid #3f3f46; /* zinc-700 */
+  border-radius: 0.375rem; /* rounded-md */
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .container--login {
   text-align: center;
+  margin-top: 3rem;
 }
 
 .button--close {
   margin-top: 1rem;
-  border: 1px solid;
+  border: 1px solid #3f3f46;
   padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  color: #1e40af;
+  border-radius: 6px;
+  color: #e2e8f0;
+  background-color: #27272a;
 }
 
 .button--close:hover {
-  margin-top: 1rem;
-  border: 1px solid;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
   color: white;
-  background-color: #1e40af;
+  background-color: #c1432e; /* rust */
+  border-color: #c1432e;
 }
 
 .dialog {
   min-width: 15rem;
   min-height: 5rem;
   padding: 2rem;
-  border: 1.5px solid gray;
+  border: 1px solid #3f3f46;
   border-radius: 6px;
 }

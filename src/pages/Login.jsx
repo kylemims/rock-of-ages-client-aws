@@ -1,16 +1,16 @@
-import { useRef, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import "./Login.css"
+import { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 export const Login = () => {
-  const apiUrl = import.meta.env.VITE_API_URL
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const existDialog = useRef()
-  const navigate = useNavigate()
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const existDialog = useRef();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     fetch(`${apiUrl}/login`, {
       method: "POST",
       body: JSON.stringify({ email, password }),
@@ -21,59 +21,63 @@ export const Login = () => {
       .then((res) => res.json())
       .then((authInfo) => {
         if (authInfo.valid) {
-          localStorage.setItem("rock_token", JSON.stringify(authInfo))
-          navigate("/")
+          localStorage.setItem("rock_token", JSON.stringify(authInfo));
+          navigate("/");
         } else {
-          existDialog.current.showModal()
+          existDialog.current.showModal();
         }
-      })
-  }
+      });
+  };
 
   return (
     <main className="container--login">
       <dialog className="dialog dialog--auth" ref={existDialog}>
         <div>User does not exist</div>
-        <button
-          className="button--close"
-          onClick={() => existDialog.current.close()}
-        >
+        <button className="button--close" onClick={() => existDialog.current.close()}>
           Close
         </button>
       </dialog>
 
       <section>
-        <form className="form--login" onSubmit={handleLogin}>
-          <h1 className="text-4xl mt-7 mb-3">Rock of Ages</h1>
-          <h2 className="text-xl mb-10">Please sign in</h2>
-          <fieldset className="mb-4">
-            <label htmlFor="inputEmail"> Email address </label>
+        <form
+          className="form--login bg-zinc-900/60 border border-zinc-700 rounded-lg p-8"
+          onSubmit={handleLogin}>
+          <h1 className="text-3xl font-semibold text-gold mb-2">Rock of Ages</h1>
+          <h2 className="text-lg text-slate-300 mb-8">Please sign in</h2>
+          <fieldset className="mb-5">
+            <label className="block mb-1 text-slate-300" htmlFor="inputEmail">
+              {" "}
+              Email address{" "}
+            </label>
             <input
               type="email"
               id="inputEmail"
               value={email}
               onChange={(evt) => setEmail(evt.target.value)}
-              className="form-control"
+              className="form-control bg-zinc-800 border-zinc-700 text-slate-100 placeholder:text-slate-400"
               placeholder="Email address"
               required
               autoFocus
             />
           </fieldset>
-          <fieldset className="mb-4">
-            <label htmlFor="inputPassword"> Password </label>
+          <fieldset className="mb-6">
+            <label className="block mb-1 text-slate-300" htmlFor="inputPassword">
+              {" "}
+              Password{" "}
+            </label>
             <input
               type="password"
               id="inputPassword"
               value={password}
               onChange={(evt) => setPassword(evt.target.value)}
-              className="form-control"
+              className="form-control bg-zinc-800 border-zinc-700 text-slate-100 placeholder:text-slate-400"
               placeholder="Password"
             />
           </fieldset>
           <fieldset>
             <button
               type="submit"
-              className="button p-3 rounded-md bg-blue-800 text-blue-100"
-            >
+              className="button w-full py-2.5 rounded-md bg-rust text-white hover:opacity-90 transition">
               Sign in
             </button>
           </fieldset>
@@ -81,14 +85,11 @@ export const Login = () => {
       </section>
       <div className="loginLinks">
         <section className="link--register">
-          <Link
-            className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
-            to="/register"
-          >
+          <Link className="underline text-silver hover:text-gold" to="/register">
             Not a member yet?
           </Link>
         </section>
       </div>
     </main>
-  )
-}
+  );
+};

@@ -1,10 +1,14 @@
 .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+  list-style-type: none;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    gap: 0.75rem;
+  }
 }
