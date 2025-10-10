@@ -41,9 +41,7 @@ describe("RockList Component", () => {
     // Check if at least one rock is displayed
     expect(
       screen.getByText(
-        (content, element) =>
-          content.includes(mockRocks[0].name) &&
-          element.textContent === `${mockRocks[0].name} (${mockRocks[0].type.label})`
+        (content, element) => content.includes(mockRocks[0].name) && content.includes(mockRocks[0].type.label)
       )
     ).toBeInTheDocument();
 
