@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { screen, waitFor, fireEvent } from "@testing-library/react";
+import { screen, waitFor, fireEvent, within } from "@testing-library/react";
 import { RockList } from "./RockList";
 import { renderWithRouter } from "../tests/utils";
 import { mockRocks } from "../tests/mocks/handlers";
@@ -38,12 +38,12 @@ describe("RockList Component", () => {
     // Check if the component title is displayed
     expect(screen.getByText("Rock List")).toBeInTheDocument();
 
-    // Check if at least one rock is displayed
-    expect(
-      screen.getByText(
-        (content, element) => content.includes(mockRocks[0].name) && content.includes(mockRocks[0].type.label)
-      )
-    ).toBeInTheDocument();
+    // Check if at least one rock is displayed by verifying the first rock's name and its type label
+    const nameEl = screen.getByText(mockRocks[0].name);
+    expect(nameEl).toBeInTheDocument();
+    // Scope the search to this rock's header container to avoid duplicate matches across cards
+    const headerContainer = nameEl.parentElement;
+    expect(within(headerContainer).getByText(`(${mockRocks[0].type.label})`)).toBeInTheDocument();
 
     // Check if the collection text is present (using getAllByText since there are multiple matches)
     expect(screen.getAllByText(/In the collection of/i).length).toBeGreaterThan(0);
