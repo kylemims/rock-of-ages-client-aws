@@ -11,6 +11,7 @@ fieldset {
 .loginLinks {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .link--register {

@@ -42,8 +42,8 @@ export const Login = () => {
         <form
           className="form--login bg-zinc-900/60 border border-zinc-700 rounded-lg p-8"
           onSubmit={handleLogin}>
-          <h1 className="text-3xl font-semibold text-gold mb-2">Rock of Ages</h1>
-          <h2 className="text-lg text-slate-300 mb-8">Please sign in</h2>
+          <h1 className="text-center text-3xl font-semibold text-gold mb-2">ROCK OF AGES</h1>
+          <h2 className="text-lg text-slate-300 mb-8 text-center">Please sign in</h2>
           <fieldset className="mb-5">
             <label className="block mb-1 text-slate-300" htmlFor="inputEmail">
               {" "}
@@ -85,7 +85,7 @@ export const Login = () => {
       </section>
       <div className="loginLinks">
         <section className="link--register">
-          <Link className="underline text-silver hover:text-gold" to="/register">
+          <Link className="underline text-slate-400 hover:text-gold" to="/register">
             Not a member yet?
           </Link>
         </section>
