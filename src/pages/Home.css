@@ -1,0 +1,63 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  height: 100vh;
+  text-align: center;
+  /* gap: 2rem; */
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 1rem; */
+}
+
+.first-word {
+  /* large bold rugged font */
+  font-family: "impact", sans-serif;
+  font-size: 10rem;
+  font-weight: 600;
+  color: #ce9e62;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #712216;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 14rem;
+}
+
+.other-words {
+  font-family: "impact", sans-serif;
+  font-size: 10rem;
+  font-weight: 600;
+  color: #ce9e62;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #712216;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  margin-bottom: 1rem;
+}
+
+.rock-paragraph {
+  font-size: 1.5rem;
+  color: #cbd1d9;
+  margin-top: 2rem;
+  font-weight: 600;
+}
